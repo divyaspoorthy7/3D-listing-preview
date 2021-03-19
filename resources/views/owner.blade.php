@@ -8,6 +8,20 @@
                 {{ __('Homeowner Area') }}
             </h2>
 
+            <div>
+                <a href="/" >
+                    <x-button >Guest</x-button>
+                </a>
+                <a>
+                    <x-button>3d Overview</x-button>
+                </a>
+
+            </div>
+
+
+
+
+
         </div>
     </x-slot>
 
