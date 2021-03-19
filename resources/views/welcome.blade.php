@@ -60,11 +60,7 @@
 
                     <div class="mx-w-full bg-white overflow-hidden shadow-sm sm:rounded-lg m-2 cursor-pointer">
                         <div class="p-6 bg-white border-b border-gray-200">
-                            <div class="flex justify-start">
-
-                                <img class="w-1/2 p-10" src="https://images.traum-ferienwohnungen.de/114/9057608/46/bungalow-steinhuder-meer-ausstattung-2.jpg" alt="Sunset in the mountains">
-
-                            </div>
+                            <model-viewer src="{{ asset('3d/appartamento3.gltf') }}" camera-controls auto-rotate></model-viewer>
                         </div>
 
                     </div>
