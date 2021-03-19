@@ -16,3 +16,17 @@
     color: white;
 }
 
+model-viewer{
+    width:800px;
+    height: 600px;
+    margin: 0 auto;
+}
+
+a-scene {
+    height: 500px;
+    width: 800px;
+}
+#myEmbeddedScene {
+    height: 500px;
+    width: 800px;
+}
