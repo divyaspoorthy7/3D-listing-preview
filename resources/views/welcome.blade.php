@@ -40,52 +40,47 @@
 {{--                                <a-sky src="{{ asset('uploads/name.jpeg') }}"></a-sky>--}}
 {{--                            </a-scene>--}}
 {{--                        </div>--}}
-{{--                        @php--}}
-{{--                            $sliders = ["https://momento360.com/e/u/78b7d03522054964ad3f02f201a37d1e?utm_campaign=embed&utm_source=other&heading=0&pitch=0&field-of-view=75&size=medium",--}}
-{{--                                         "https://momento360.com/e/u/78b7d03522054964ad3f02f201a37d1e?utm_campaign=embed&utm_source=other&heading=0&pitch=0&field-of-view=75&size=medium"];--}}
-{{--                        @endphp--}}
+                        @php
+                            $path = public_path('uploads');
+                            $files = File::allFiles($path);
+
+
+
+                        @endphp
 
                         <div id="myCarousel" class="carousel slide" data-ride="carousel">
                             <ol class="carousel-indicators">
                                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                             </ol>
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <div class="embed360">
-                                        <img src="{{ asset('uploads/name.jpeg') }}">
-                                    </div>
 
-                                    <script>
-                                        embed360('.embed360');
-                                    </script>
-
-
-
+                            <div class="carousel-item active">
+                                <div class="embed360">
+                                    <img src="{{ asset('uploads/name.jpeg') }}">
                                 </div>
-                                <div class="carousel-item">
-                                    <div class="embed360">
-                                        <img src="{{ asset('uploads/1616158209.jpeg') }}">
-                                    </div>
 
-                                    <script>
-                                        embed360('.embed360');
-                                    </script>
-
-
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="embed360">
-                                        <img src="{{ asset('uploads/1616158218.jpeg') }}">
-                                    </div>
-
-                                    <script>
-                                        embed360('.embed360');
-                                    </script>
-
-
-                                </div>
+                                <script>
+                                    embed360('.embed360');
+                                </script>
 
                             </div>
+
+                            <div class="carousel-inner">
+                                @foreach ($files as $key)
+                                    <div class="carousel-item">
+                                        <div class="embed360">
+                                            <img src="{{ asset('uploads/'.$key->getRelativePathname()) }}">
+                                        </div>
+
+                                        <script>
+                                            embed360('.embed360');
+                                        </script>
+
+                                    </div>
+
+                                @endforeach
+
+                            </div>
+
                             <a class="carousel-control-prev" href="#myCarousel" role="button"  data-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true">   </span>
                                 <span class="sr-only">Previous</span>
@@ -94,6 +89,7 @@
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="sr-only">Next</span>
                             </a>
+
                         </div>
 
 
