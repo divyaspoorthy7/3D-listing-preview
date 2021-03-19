@@ -17,3 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/owner', function () {
+    return view('owner', ['name' => 'Samantha']);
+});
+
+Route::get('file-upload', 'App\Http\Controllers\FileUploadController@fileUpload')->name('file.upload');
+Route::post('file-upload', 'App\Http\Controllers\FileUploadController@fileUploadPost')->name('file.upload.post');
